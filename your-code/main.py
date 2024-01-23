@@ -1,67 +1,95 @@
 #1. Import the NUMPY package under the name np.
-
+import numpy as np
 
 
 #2. Print the NUMPY version and the configuration.
-
-
-
+print(np.version.version)
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
+a = np.random.randint(0, 30, size=(2, 3, 5))
+
 
 
 
 #4. Print a.
-
-
+print(a)
+print()
 
 #5. Create a 5x2x3 3-dimensional array with all values equaling 1.
 #Assign the array to variable "b"
-
+b = np.ones((5, 2, 3))
 
 
 #6. Print b.
-
-
+print(b)
+print()
 
 #7. Do a and b have the same size? How do you prove that in Python code?
-
-
-
-
+print(f'size a {a.size}')
+print()
+print(f'size b {b.size}')
+print()
 #8. Are you able to add a and b? Why or why not?
 
+#all = a + c
 
+print(f'array all {all}')
 
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
-
+c = b.transpose(1, 2 , 0)
+all = a + c
+print(f'c {c}')
+print()
+print(f'all {all}')
+print()
+#c = b.transpose(2, 0, 1)
+#b = 5:2, 2:0, 3:1
+#a = 2:0, 3:1, 5:2
 
 
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
-
+d = sum(a + c)
+print(f'D {d}')
+print()
 
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
+print(f'A {a}')
+print()
+print(f'B {b}')
+print()
 
 
 
 
 #12. Multiply a and c. Assign the result to e.
+e = (a*c)
 
-
+print(f'E {e}')
+print()
 
 #13. Does e equal to a? Why or why not?
-
-
+if e.all() == a.all():
+        print('they are equal')
+else:
+        print('They are no equal')        
 
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
 
 
+print(f'max {d.max()}')
+print()
+print(f'min {d.min()}')
+print()
+print(f'Mean {np.mean(d)}')
+print()
 
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
+f = np.empty_like(d)
 
+print(f'F labeled like D {f}')
 
 
 
